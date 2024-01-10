@@ -1,5 +1,28 @@
 ---
+const pageTitle = "About Me";
 
+const identity = {
+  firstName: "Matias",
+  lastName: "Baldanza",
+  country: "Argentina",
+  occupation: "Frontend Developer",
+  hobbies: ["Coding", "Reading", "Gaming"],
+};
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Node.js",
+  "Git",
+  "GitHub",
+  "VSCode",
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
 <html lang="en">
@@ -16,16 +39,35 @@
       <a href="/about">About</a>
       <a href="/blog">Blog</a>
     </header>
-    <h1>About this site</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis ab
-      unde, quo est sapiente error? Vel laborum suscipit mollitia sequi aliquid
-      debitis fugiat rerum! Minus praesentium delectus blanditiis magni? Animi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
-      magnam ut sed officiis explicabo quae deserunt fuga non culpa, provident
-      qui, nulla assumenda sint inventore impedit ad. Ad, iste minus.
-    </p>
+    <h1>{pageTitle}</h1>
+    <p>Welcome to my website! Here are a few facts about me</p>
+    <ul>
+      <li>My name is {identity.firstName} {identity.lastName}</li>
+      <li>I am a {identity.occupation} from {identity.country}.</li>
+      {
+        identity.hobbies.length >= 10 && (
+          <li>
+            Two of my hobbies are: <em>{identity.hobbies[0].toLowerCase()}</em>{" "}
+            and <em>{identity.hobbies[1].toLowerCase()}</em>
+          </li>
+        )
+      }
+    </ul>
+    <p>My skills are:</p>
+    <ul>
+      {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+    {happy && <p>I am happy to be learning Astro!</p>}
+    {finished && <p>I finished this tutorial!</p>}
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>
+          My goal is not in 3 days.{" "}
+          <em>My actual goal is to finish in {goal} days</em>
+        </p>
+      )
+    }
   </body>
 </html>

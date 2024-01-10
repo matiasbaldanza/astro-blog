@@ -1,5 +1,5 @@
 ---
-
+const pageTitle = "About Me";
 ---
 
 <html lang="en">
@@ -8,7 +8,7 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>About — Astro Blog</title>
+    <title>{pageTitle} — Astro Blog</title>
   </head>
   <body>
     <header>
@@ -16,16 +16,9 @@
       <a href="/about">About</a>
       <a href="/blog">Blog</a>
     </header>
-    <h1>Blog</h1>
-    <p>
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis ab
-      unde, quo est sapiente error? Vel laborum suscipit mollitia sequi aliquid
-      debitis fugiat rerum! Minus praesentium delectus blanditiis magni? Animi.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
-      magnam ut sed officiis explicabo quae deserunt fuga non culpa, provident
-      qui, nulla assumenda sint inventore impedit ad. Ad, iste minus.
-    </p>
+    <h1>{pageTitle}</h1>
+    <a href="/posts/post-1">Post 1</a>
+    <a href="/posts/post-2">Post 2</a>
+    <a href="/posts/post-3">Post 3</a>
   </body>
 </html>
