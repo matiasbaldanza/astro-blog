@@ -7,7 +7,9 @@ const { frontmatter } = Astro.props;
   Written by {frontmatter.author}
   <br />
   Published on: {frontmatter.pubDate.slice(0, 10)}
+  <br />
+  Tags: <em>{frontmatter.tags.join(", ")}</em>
 </p>
 <p><em>{frontmatter.description}</em></p>
-<hr />
+<img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 <slot />
