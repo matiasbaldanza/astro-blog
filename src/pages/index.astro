@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
-import Navigation from "../components/Navigation.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 const siteName = "Astro Blog";
 ---
 
@@ -13,9 +14,8 @@ const siteName = "Astro Blog";
     <title>{siteName}</title>
   </head>
   <body>
-    <header>
-      <Navigation />
-    </header>
+    <Header />
     <h1>Astro Blog</h1>
+    <Footer />
   </body>
 </html>

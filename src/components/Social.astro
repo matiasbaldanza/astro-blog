@@ -1,0 +1,32 @@
+---
+interface Props {
+  platform: string;
+  username: string;
+}
+
+// if Props is defined, it's inferred and assigned automatically
+const { platform, username } = Astro.props;
+
+// not necessary if Props is defined
+// const { platform, username }: Props = Astro.props;
+
+// not necessary if Props is defined, can user another name
+// const { platform, username } = Astro.props as Props;
+---
+
+<a
+  href={`https://www.${platform}.com/${username}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  {platform}
+</a>
+
+<style>
+  a {
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: #4c1d95;
+    text-decoration: none;
+  }
+</style>
