@@ -1,0 +1,35 @@
+---
+const { post } = Astro.props;
+---
+
+<li>
+  <a href={post.url}>{post.frontmatter.title}</a> —{" "}
+  {post.frontmatter.author}
+  <br />
+  <em style="color: gray">{post.frontmatter.pubDate.slice(0, 10)}</em>
+  <br />
+  <span>
+    {post.frontmatter.description}
+  </span>
+</li>
+
+<style>
+  li {
+    margin-bottom: 0.5rem;
+    list-style: none;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid gray;
+    border-radius: 0.5rem;
+  }
+
+  li:hover {
+    background-color: #f0f0f0;
+  }
+
+  span {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    font-style: italic;
+  }
+</style>
