@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import TagCloud from "../components/TagCloud.astro";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -9,7 +11,7 @@ const { frontmatter } = Astro.props;
     <br />
     Published on: {frontmatter.pubDate.slice(0, 10)}
     <br />
-    Tags: <em>{frontmatter.tags.join(", ")}</em>
+    <TagCloud tags={frontmatter.tags} />
   </p>
   <p><em>{frontmatter.description}</em></p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
