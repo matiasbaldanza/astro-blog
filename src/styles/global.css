@@ -12,6 +12,10 @@ html.dark {
   color: #fff;
 }
 
+.dark h1 {
+  color: lightblue;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
