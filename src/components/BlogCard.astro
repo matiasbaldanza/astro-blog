@@ -3,13 +3,13 @@ const { post } = Astro.props;
 ---
 
 <li>
-  <a href={post.url}>{post.frontmatter.title}</a> —{" "}
-  {post.frontmatter.author}
+  <a href={`/posts/${post.slug}/`}>{post.data.title}</a> —{" "}
+  {post.data.author}
   <br />
-  <em style="color: gray">{post.frontmatter.pubDate.slice(0, 10)}</em>
+  <em style="color: gray">{post.data.pubDate.toString().slice(0, 10)}</em>
   <br />
   <span>
-    {post.frontmatter.description}
+    {post.data.description}
   </span>
 </li>
 

@@ -7,13 +7,15 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <p>
-    Written by {frontmatter.author}
+    Written by <a href="/about">{frontmatter.author}</a>
     <br />
-    Published on: {frontmatter.pubDate.slice(0, 10)}
+    Published on: {frontmatter.pubDate.toString().slice(0, 10)}
     <br />
     <TagCloud tags={frontmatter.tags} />
   </p>
-  <p><em>{frontmatter.description}</em></p>
+  <p>
+    <em>{frontmatter.description}</em>
+  </p>
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
   <slot />
 </BaseLayout>
