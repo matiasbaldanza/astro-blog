@@ -12,7 +12,7 @@ export async function GET(context) {
       pubDate: post.data.pubDate,
       description: post.data.description,
       link: `/posts/${post.slug}/`,
-    })),
+    })).sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate)),
     customData: `<language>en-us</language>`,
   });
 }
